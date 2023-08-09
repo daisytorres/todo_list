@@ -7,15 +7,21 @@ import TodoForm from './components/TodoForm';
 
 function App() {
 
+//initializing a state variable, returning an empty array
   const[nextTodo, setNextTodo] = useState([])
+
+  //this is receiving the new taks being created
   const addTolList = (task) =>{
     setNextTodo([...nextTodo, task])
   }
+
+  //this is deleting the tasks that are being indicated as delete
   const deleteCurrentTask = (deleteIdx) => {
     const remove = nextTodo.filter((eachTask, Idx) => Idx !== deleteIdx)
     setNextTodo(remove)
   }
 
+  //this is updating each task with a strikethrough
   const updateTask = (updateIdx, isChecked) => {
     const newTasks = nextTodo.map((eachTask, Idx) => {
       if (updateIdx === Idx){
@@ -26,7 +32,7 @@ function App() {
     setNextTodo(newTasks)
   }
 
-
+  //
   return (
     <div className="App">
       <TodoForm newTodo={addTolList}></TodoForm>

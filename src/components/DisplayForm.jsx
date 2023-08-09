@@ -11,6 +11,7 @@ const makeComplete = (Idx, isChecked) => {
 
     return (
         <div style = {{display: "in-flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: 20}}>
+            
             {props.nextTodo.map((eachTask, Idx) => {
 
                 return (
